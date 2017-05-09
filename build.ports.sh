@@ -3,12 +3,6 @@
 #
 # build all the ports I want normally want.
 
-export ftp_proxy=http://dodge:webshite@proxy.dmumford.com:8080/
-export http_proxy=http://dodge:webshite@proxy.dmumford.com:8080/
-export https_proxy=http://dodge:webshite@proxy.dmumford.com:8080/
-
-cp ports-patches/zzz_dodge_rtorrent.diff /usr/ports/net/rtorrent/patches || exit 1
-
 PACKAGES="
 	archivers/bzip2
 	archivers/unrar
