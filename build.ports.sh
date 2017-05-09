@@ -46,22 +46,26 @@ PACKAGES="
 #	net/nagios
 
 for pkg in ${PACKAGES} ; do
-	p=`echo "${pkg}" | awk -F: '{print $1}'`
-	f=`echo "${pkg}" | awk -F: '{print $2}'`
-	if [ "$f" = "" ]; then
-		unset FLAVOR
-	else
-		export FLAVOR="${f}"
-	fi
+	(
+		p=`echo "${pkg}" | awk -F: '{print $1}'`
+		f=`echo "${pkg}" | awk -F: '{print $2}'`
+		if [ "$f" = "" ]; then
+			unset FLAVOR
+		else
+			export FLAVOR="${f}"
+		fi
 
-	echo "pkg:${pkg} ${FLAVOR}"
+		echo "Cleaning up before building"
+		pkg_info | awk '{print $1}' | xargs pkg_delete
+		rm -rf /usr/ports/pobj
 
-	pkg_info | awk '{print $1}' | xargs pkg_delete
-	# cd /usr/ports/${p} && make all package install && make clean distclean && pkg_delete ${p} || exit 1
-	cd /usr/ports/${p} && make all package install
-	if [ $? != 0 ] ; then
-		FAIL="${FAIL}${pkg} "
-	fi
+		echo "Building pkg:${pkg} FLAVOR:${FLAVOR}"
+
+		cd /usr/ports/${p} && make all package install
+		if [ $? != 0 ] ; then
+			FAIL="${FAIL}${pkg} "
+		fi
+	)
 
 done
 
