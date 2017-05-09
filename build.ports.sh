@@ -8,15 +8,14 @@ PACKAGES="
 	archivers/unrar
 	archivers/unzip
 	archivers/zip
-	comms/minicom
 	databases/db/v4:no_java
-	devel/ddd
 	devel/git
 	editors/vim:no_x11
-	lang/lua
+	lang/lua/5.2
 	lang/python/2.7
-	lang/ruby/1.9:no_x11
 	mail/alpine
+	mail/courier-imap
+	mail/cyrus-imapd
 	mail/fetchmail
 	mail/imap-uw
 	mail/mboxgrep
@@ -32,8 +31,6 @@ PACKAGES="
 	net/openvpn
 	net/rsync
 	net/rtorrent
-	net/silc-client
-	net/silc-server
 	net/wget
 	security/gnupg
 	shells/bash
@@ -43,7 +40,6 @@ PACKAGES="
 	www/links
 	www/squid
 "
-#	net/nagios
 
 for pkg in ${PACKAGES} ; do
 	(
