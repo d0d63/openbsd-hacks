@@ -61,7 +61,7 @@ for pkg in ${PACKAGES} ; do
 		if [ $? != 0 ] ; then
 			FAIL="${FAIL}${pkg} "
 		fi
-	)
+	) 2>&1 | tee output-${pkg}
 
 done
 
