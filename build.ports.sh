@@ -31,6 +31,7 @@ PACKAGES="
 	net/openvpn
 	net/rsync
 	net/rtorrent
+	net/samba
 	net/wget
 	security/gnupg
 	shells/bash
