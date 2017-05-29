@@ -22,7 +22,6 @@ PACKAGES="
 	mail/postfix/stable:sasl2
 	mail/procmail
 	misc/screen
-	net/cvsync
 	net/flowd
 	net/irssi
 	net/nmap
