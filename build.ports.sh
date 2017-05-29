@@ -18,7 +18,7 @@ PACKAGES="
 	mail/cyrus-imapd
 	mail/fetchmail
 	mail/mboxgrep
-	mail/mutt/stable
+	mail/mutt
 	mail/postfix/stable:sasl2
 	mail/procmail
 	misc/screen
