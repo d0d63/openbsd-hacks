@@ -17,7 +17,6 @@ PACKAGES="
 	mail/courier-imap
 	mail/cyrus-imapd
 	mail/fetchmail
-	mail/imap-uw
 	mail/mboxgrep
 	mail/mutt/stable
 	mail/postfix/stable:sasl2
